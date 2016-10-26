@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Bookshelf1.Models.Book>
+
+@{
+    ViewBag.Title = "Bookshelf Homepage";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="row">
+            @*@Html.DisplayNameFor(model => model.Category.Name)
+        
+            @Html.DisplayNameFor(model => model.Title)
+     
+            @Html.DisplayNameFor(model => model.PublishedDate)
+        
+            @Html.DisplayNameFor(model => model.Description)
+       
+            @Html.DisplayNameFor(model => model.ISBN)*@
+
+
+@foreach (var item in Model)
+{
+
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>@Html.DisplayFor(modelItem => item.Title)</h3>
+                    <p>@Html.DisplayFor(modelItem => item.Description)</p>
+                    <p>@Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-primary"})
+
+
+                    @**<p><a href="#" class="btn btn-primary" role="button">Button</a>*@ </p>
+                </div>
+            </div>
+        </div>
+  
+
+        @*@Html.DisplayFor(modelItem => item.Category.Name)
+
+        
+
+        @Html.DisplayFor(modelItem => item.PublishedDate)
+
+        
+
+        @Html.DisplayFor(modelItem => item.ISBN)
+
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+        @Html.ActionLink("Details", "Details", new { id = item.ID })
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
+
+}
+
+  </div>
